@@ -15,7 +15,7 @@ interface CalendarEvent {
 })
 export class CalendarComponent implements OnInit {
   events: CalendarEvent[];
-  headings: string[] = moment.weekdays();
+  days: string[] = moment.weekdays();
 
   constructor() {
     this.events = [

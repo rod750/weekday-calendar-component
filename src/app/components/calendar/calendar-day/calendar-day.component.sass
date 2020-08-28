@@ -1,8 +1,20 @@
 .calendar-day
   width: 200px
   float: left
+  position: relative
 
   .calendar-hour, &-name
     border-bottom: 1px solid #ccc
     height: 50px
+
+  .calendar-event
+    position: absolute
+    float: left
+    top: 0
+    width: 100%
+    border: 1px solid #2b1166
+    background: #5746DC
+    color: #ffffff
+    font-weight: bold
+    padding: 10px
 

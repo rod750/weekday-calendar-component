@@ -27,10 +27,10 @@ export class CalendarEventComponent implements OnInit {
     this.description = this.event.description;
 
     const topOffset = 51 * startTime.get('hour') + 51;
-    const height = 50 * endTime.diff(startTime, 'hours');
+    const height = 51 * endTime.diff(startTime, 'hours');
 
     this.styles = {
-      height: `${height}px`,
+      height: `${height-1}px`,
       top: `${topOffset-1}px`
     };
   }

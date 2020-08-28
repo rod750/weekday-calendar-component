@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import moment, { Moment } from 'moment';
 import { CalendarEvent } from './interfaces/calendar-event.interface';
 
@@ -8,24 +8,21 @@ import { CalendarEvent } from './interfaces/calendar-event.interface';
   styleUrls: ['./calendar.component.sass']
 })
 export class CalendarComponent implements OnInit {
-  events: CalendarEvent[];
+  @Input() events: CalendarEvent[];
+  eventsPerDay: any[] = Array.from({length: 7}, () => []);
   days: string[] = moment.weekdays();
 
   constructor() {
-    this.events = [
-      {
-        startTime: '2020-08-28T11:00:00-05:00',
-        endTime: '2020-08-28T13:00:00-05:00',
-        description: 'This is my event'
-      },
-      {
-        startTime: '2020-08-28T15:00:00-05:00',
-        endTime: '2020-08-28T16:00:00-05:00',
-        description: 'Other event'
-      },
-    ];
+    
   }
 
   ngOnInit() {
+    this.eventsPerDay = this.events.reduce((events: any[], event) => {
+      const weekday: number = moment(event.startTime).weekday();
+
+      events[weekday].push(event);
+
+      return events;
+    }, this.eventsPerDay);
   }
 }

@@ -15,7 +15,6 @@ export class CalendarDayComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(JSON.stringify(this.events));
   }
 
 }

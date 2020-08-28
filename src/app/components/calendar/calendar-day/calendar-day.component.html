@@ -5,5 +5,8 @@
     class="calendar-hour">
     {{ hour }}:00
   </div>
-  <div class="calendar-event">This is a test</div>
+  <app-calendar-event
+    *ngFor="let event of events"
+    [event]="event">
+  </app-calendar-event>
 </div>

@@ -1,3 +1,7 @@
 <div class="calendar-component">
-  <app-calendar-day *ngFor="let day of days" dayName="{{day}}"></app-calendar-day>
+  <app-calendar-day
+    *ngFor="let day of days"
+    dayName="{{day}}"
+    [events]="events">
+  </app-calendar-day>
 </div>

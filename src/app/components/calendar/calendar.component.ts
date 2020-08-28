@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import moment, { Moment } from 'moment';
-
-interface CalendarEvent {
-  startTime: Moment;
-  endTime: Moment;
-  day: number;
-  description: string;
-};
+import { CalendarEvent } from './interfaces/calendar-event.interface';
 
 @Component({
   selector: 'app-calendar',
@@ -20,15 +14,13 @@ export class CalendarComponent implements OnInit {
   constructor() {
     this.events = [
       {
-        startTime: moment('27/08/2020 12:30'),
-        endTime: moment('27/08/2020 13:30'),
-        day: 0,
+        startTime: '2020-08-28T11:00:00-05:00',
+        endTime: '2020-08-28T13:00:00-05:00',
         description: 'This is my event'
       },
       {
-        startTime: moment('29/08/2020 16:30'),
-        endTime: moment('29/08/2020 17:30'),
-        day: 0,
+        startTime: '2020-08-28T15:00:00-05:00',
+        endTime: '2020-08-28T16:00:00-05:00',
         description: 'Other event'
       },
     ];

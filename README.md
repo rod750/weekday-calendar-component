@@ -1,4 +1,8 @@
-# AngulaApp
+# Simple Weekday Calendar Component
+
+## Demo
+
+https://weekday-calendar-component.onrender.com/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
